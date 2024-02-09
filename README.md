@@ -1,4 +1,4 @@
-# 🧵 Basic star
+# 🧵 Basic start
 
 ```bash
     npm run dev
