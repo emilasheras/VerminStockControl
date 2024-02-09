@@ -1,2 +1,10 @@
-# VerminStockControl
-Learning backend with Javascript. This repo is temporal hub for my CoderHouse deliverables. 
+# 🧵 Basic star
+
+```bash
+    npm run dev
+```
+
+or simply run 
+```bash
+    node app.js
+```
