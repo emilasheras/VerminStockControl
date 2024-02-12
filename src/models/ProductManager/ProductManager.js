@@ -8,13 +8,17 @@ export default class ProductManager {
 
     async loadProducts() {
         try {
+            // read from filepath
             const data = await fs.readFile(this.filePath);
+            // parse data from string to JSON 
             const products = JSON.parse(data.toString());
+            
             this.products = products;
+            console.log(`Data loaded from ${this.filePath}`);
             console.log(this.products);
 
+            // set currentId to the highest id in the products array
             this.currentId = products.length ? Math.max(...products.map(p => p.id)) + 1 : 1;
-            console.log(`Data loaded from ${this.filePath}`);
         } catch (error) {
             console.error('Error loading products:', error);
             this.products = [];

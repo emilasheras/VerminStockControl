@@ -1,0 +1,92 @@
+[
+	{
+		"title": "TestProduct [001]",
+		"description": "This is a test product",
+		"price": 12,
+		"thumbnail": "Sin imagen",
+		"code": "20L31ABH",
+		"stock": 24,
+		"id": 1
+	},
+	{
+		"title": "TestProduct [002]",
+		"description": "This is a test product",
+		"price": 18,
+		"thumbnail": "Sin imagen",
+		"code": "20L31ABI",
+		"stock": 22,
+		"id": 2
+	},
+	{
+		"title": "TestProduct [003]",
+		"description": "This is a test product",
+		"price": 14,
+		"thumbnail": "Sin imagen",
+		"code": "20L31ABJ",
+		"stock": 25,
+		"id": 3
+	},
+	{
+		"title": "TestProduct [004]",
+		"description": "This is a test product",
+		"price": 16,
+		"thumbnail": "Sin imagen",
+		"code": "20L31ABK",
+		"stock": 23,
+		"id": 4
+	},
+	{
+		"title": "TestProduct [005]",
+		"description": "This is a test product",
+		"price": 13,
+		"thumbnail": "Sin imagen",
+		"code": "20L31ABL",
+		"stock": 27,
+		"id": 5
+	},
+	{
+		"title": "TestProduct [006]",
+		"description": "This is a test product",
+		"price": 17,
+		"thumbnail": "Sin imagen",
+		"code": "20L31ABM",
+		"stock": 21,
+		"id": 6
+	},
+	{
+		"title": "TestProduct [007]",
+		"description": "This is a test product",
+		"price": 11,
+		"thumbnail": "Sin imagen",
+		"code": "20L31ABN",
+		"stock": 28,
+		"id": 7
+	},
+	{
+		"title": "TestProduct [008]",
+		"description": "This is a test product",
+		"price": 19,
+		"thumbnail": "Sin imagen",
+		"code": "20L31ABO",
+		"stock": 20,
+		"id": 8
+	},
+	{
+		"title": "TestProduct [009]",
+		"description": "This is a test product",
+		"price": 15,
+		"thumbnail": "Sin imagen",
+		"code": "20L31ABP",
+		"stock": 26,
+		"id": 9
+	},
+	{
+		"title": "TestProduct [010]",
+		"description": "This is a test product",
+		"price": 10,
+		"thumbnail": "Sin imagen",
+		"code": "20L31ABQ",
+		"stock": 30,
+		"id": 10
+	}
+]
