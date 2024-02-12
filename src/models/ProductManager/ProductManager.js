@@ -6,6 +6,17 @@ export default class ProductManager {
         this.currentId = 1;
     }
 
+    search(params) {
+        if(!params) return false;
+
+        // Filter by id
+        if(params.id) {
+            return this.products.filter(product => {
+                return product.id == params.id; // <- beware of type check
+            });
+        }
+    }
+
     async loadProducts() {
         try {
             // read from filepath
@@ -14,8 +25,7 @@ export default class ProductManager {
             const products = JSON.parse(data.toString());
             
             this.products = products;
-            console.log(`Data loaded from ${this.filePath}`);
-            console.log(this.products);
+            console.log(`✅ Data loaded from ${this.filePath}`);
 
             // set currentId to the highest id in the products array
             this.currentId = products.length ? Math.max(...products.map(p => p.id)) + 1 : 1;
