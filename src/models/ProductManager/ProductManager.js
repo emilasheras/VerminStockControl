@@ -6,17 +6,6 @@ export default class ProductManager {
         this.currentId = 1;
     }
 
-    search(params) {
-        if(!params) return false;
-
-        // Filter by id
-        if(params.id) {
-            return this.products.filter(product => {
-                return product.id == params.id; // <- beware of type check
-            });
-        }
-    }
-
     async loadProducts() {
         try {
             // read from filepath
@@ -48,7 +37,7 @@ export default class ProductManager {
     }
 
     addProduct(product) {
-        if (this.products.some(product => product.code === product.code)) {
+        if (this.products.some(product => product.code == product.code)) {
             throw new Error('Product code must be unique');
         }
         const newProduct = { ...product, id: this.currentId++ };
@@ -58,7 +47,7 @@ export default class ProductManager {
     }
 
     getProductById(id) {
-        const product = this.products.find(product => product.id === id);
+        const product = this.products.find(product => product.id == id); // <- beware of type check
         if (!product) {
             throw new Error('Product not found');
         }
@@ -89,5 +78,51 @@ export default class ProductManager {
         this.saveProducts();
         return true;
     }
+
+
+    
+    /**
+     * Searches for products based on the given parameters.
+     * @param {Object} params - The parameters for filtering (e.g., from the request).
+     * @returns {Array|boolean} - The filtered data or false if no params.
+     */
+    search(params) {
+        // if no params, return false
+        if(!params) return false;
+
+        // defaults
+        let data = this.products;
+        let offset = params.offset ? params.offset : 0;
+        let limit = params.limit ? params.limit : 10;
+
+        // Filters
+        // id
+        data = this.filterById(params, data); //? data or query?
+        // ... more filters
+
+        // Pagination
+        data = data.slice(offset, offset + limit);
+
+        // Return the dataprovider
+        return data;
+    }
+
+
+    /**
+     * Filters data by product id.
+     * 
+     * @param {Object} params - The parameters for filtering (e.g., from the request).
+     * @param {Array} data - The data or query to be filtered.
+     * @returns {Array} - The filtered data.
+     */
+    filterById(params, data) {
+        if(params.id) {
+            data = this.products.filter(product => {
+                return product.id == params.id; // <- beware of type check
+            });
+        }
+        return data;
+    }
+
 
 }

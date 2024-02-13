@@ -30,5 +30,23 @@ router.get('', async (req, res) => {
     .send(product);
 });
 
+/**
+ * Recieves a dynamic id and returns a SINGLE product
+ */
+router.get('/:id', async (req, res) => {
+  const id = req.params.id;
+  const productManager = new ProductManager(`./src/data/products.json`);
+  await productManager.loadProducts();
+  const product = productManager.getProductById(id);
+  
+  if (!product) {
+    res
+      .status(404)
+      .send(`Product not found id: ${id}`);
+  }
+  res
+    .status(200)
+    .send(product);
+}); 
 
 export default router; 
