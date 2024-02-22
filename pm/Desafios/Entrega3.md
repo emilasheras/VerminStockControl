@@ -1,6 +1,4 @@
-# Entregables
-
-## Entrega 3 - Servidor con express
+## Desafio 3 - Servidor con express
 
 
 - [x] Desarrollar un servidor basado en express donde podamos hacer consultas a nuestro archivo de productos.
@@ -32,8 +30,3 @@ extras
     Archivo `/src/data/products.json`
 - [x] Correr el servidor en el puerto 8080 y probar los endpoints mediante un navegador.
     Archivo `/app.js`. Variable de entorno `SERVER_PORT` en el archivo `.env`.
-
-## Entrega 2
-- [x] ...
-## Entrega 1
-- [x] ...
