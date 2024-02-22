@@ -11,7 +11,7 @@ const ANSIred =     '\x1b[31m%s\x1b[0m';
 /** VAR **/
 dotenv.config();
 const app = express();
-const SERVER_PORT = process.env.SERVER_PORT;
+const SERVER_PORT = process.env.SERVER_PORT || 8080;
 
 // Routes
 app.use('/', baseAppRouter);
