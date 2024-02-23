@@ -87,6 +87,22 @@ router.put('/:id', async (req, res) => {
     .send('Product updated successfully');
 });
 
+// DELETE
+/**
+ * The DELETE method must take the product id and delete it.
+ */
+router.delete('/:id', async (req, res) => {
+  const id = req.params.id;
+  const productManager = new ProductManager();
+  await productManager.loadProducts();
+  const deletedProduct = productManager.deleteProduct(id);
+
+  res
+    .status(200)
+    .send('Product deleted successfully');
+});
+
+
 
 
 export default router; 

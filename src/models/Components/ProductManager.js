@@ -67,18 +67,16 @@ export default class ProductManager {
     }
 
     deleteProduct(id) {
-        // this.filePath = './data/data2.json';
         const index = this.products.findIndex(product => product.id == id);
         if (index === -1) {
             throw new Error('Product not found');
         }
-        // this.products = this.products.filter(product => product.id !== id);
-        this.products = [{id: 2}];
-        
-        console.log(`after filter function`,this.products);
+        this.products = this.products.filter(product => product.id != id);
 
+        console.log(`after filter function`,this.products);
+        
         this.saveProducts();
-        return true;
+        // return true;
     }
 
 
