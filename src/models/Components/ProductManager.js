@@ -57,7 +57,7 @@ export default class ProductManager {
     }
 
     updateProduct(id, product) {
-        const index = this.products.findIndex(product => product.id === id);
+        const index = this.products.findIndex(product => product.id == id);
         if (index === -1) {
             throw new Error('Product not found');
         }
@@ -68,7 +68,7 @@ export default class ProductManager {
 
     deleteProduct(id) {
         // this.filePath = './data/data2.json';
-        const index = this.products.findIndex(product => product.id === id);
+        const index = this.products.findIndex(product => product.id == id);
         if (index === -1) {
             throw new Error('Product not found');
         }

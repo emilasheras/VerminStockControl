@@ -71,5 +71,22 @@ router.post('', async (req, res) => {
     .send('Product added successfully');
 });
 
+// PUT
+/**
+ * The PUT method must take the product id and update it with the fields provided.
+ */
+router.put('/:id', async (req, res) => {
+  const id = req.params.id;
+  const params = req.body;
+  const productManager = new ProductManager();
+  await productManager.loadProducts();
+  const updatedProduct = await productManager.updateProduct(id, params);
+
+  res
+    .status(200)
+    .send('Product updated successfully');
+});
+
+
 
 export default router; 

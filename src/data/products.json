@@ -54,13 +54,15 @@
 		"id": 6
 	},
 	{
-		"title": "TestProduct [007]",
-		"description": "This is a test product",
-		"price": 11,
-		"thumbnail": "Sin imagen",
-		"code": "20L31ABN",
-		"stock": 28,
-		"id": 7
+		"title": "Product Updated Via API 3",
+		"description": "Description Test",
+		"code": "CDET3334",
+		"price": 122.2,
+		"status": true,
+		"stock": 1,
+		"category": "Test",
+		"thumbnails": [],
+		"id": "7"
 	},
 	{
 		"title": "TestProduct [008]",
@@ -99,5 +101,16 @@
 		"stock": 1,
 		"category": "Test",
 		"thumbnails": []
+	},
+	{
+		"title": "Product Updated Via API 2",
+		"description": "Description Test",
+		"code": "CDET3334",
+		"price": 122.2,
+		"status": true,
+		"stock": 1,
+		"category": "Test",
+		"thumbnails": [],
+		"id": "12"
 	}
 ]
