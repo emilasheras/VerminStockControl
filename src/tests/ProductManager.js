@@ -1,5 +1,5 @@
 /** IMPORTS **/
-import ProductManager from "../models/ProductManager/ProductManager.js";
+import ProductManager from "../models/Components/ProductManager.js";
 
 /** VARIABLES **/
 const ANSImagenta = '\x1b[35m%s\x1b[0m';

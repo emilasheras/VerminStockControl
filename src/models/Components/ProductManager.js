@@ -1,7 +1,10 @@
 import fs from 'fs/promises';
+import ProductModel from '../ProductModel.js';
+const PRODUCTS_FILE_PATH = './src/data/products.json';
+
 export default class ProductManager {
-    constructor(filePath) {
-        this.filePath = filePath;
+    constructor() {
+        this.filePath = PRODUCTS_FILE_PATH;
         this.products = [];
         this.currentId = 1;
     }
@@ -37,13 +40,12 @@ export default class ProductManager {
     }
 
     addProduct(product) {
-        if (this.products.some(product => product.code == product.code)) {
-            throw new Error('Product code must be unique');
-        }
-        const newProduct = { ...product, id: this.currentId++ };
-        this.products.push(newProduct);
-        this.saveProducts();
-        return newProduct;
+        const productModel = new ProductModel({ ...product, id: this.currentId++ });
+
+        // Check the field attributes before adding the product.
+        this.products.push(productModel.toJson()); // <- get the json format of the class object
+        this.saveProducts(); //* <- save the products to the file
+        return productModel;
     }
 
     getProductById(id) {
