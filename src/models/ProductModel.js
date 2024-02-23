@@ -10,7 +10,7 @@ export default class ProductModel {
         this.description = params.description;
         this.code = params.code;
         this.price = params.price;
-        this.status = params.status;
+        this.status = params.status??true; // DEFAULT: if no status is provided, set it to true (active) by default
         this.stock = params.stock;
         this.category = params.category;
         this.thumbnails = params.thumbnails??[]; // DEFAULT: if no thumbnails are provided, set it to an empty array
