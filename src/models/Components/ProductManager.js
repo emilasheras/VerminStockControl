@@ -1,6 +1,7 @@
 import fs from 'fs/promises';
 import ProductModel from '../ProductModel.js';
 const PRODUCTS_FILE_PATH = './src/data/products.json';
+const PRODUCTS_EMOJI = "📦";
 
 export default class ProductManager {
     constructor() {
@@ -17,7 +18,7 @@ export default class ProductManager {
             const products = JSON.parse(data.toString());
             
             this.products = products;
-            console.log(`✅ Data loaded from ${this.filePath}`);
+            console.log(`✅ Data loaded from ${this.filePath} ${PRODUCTS_EMOJI}`);
 
             // set currentId to the highest id in the products array
             this.currentId = products.length ? Math.max(...products.map(p => p.id)) + 1 : 1;

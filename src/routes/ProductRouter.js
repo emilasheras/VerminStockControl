@@ -9,7 +9,7 @@ import ProductManager from '../models/Components/ProductManager.js';
  */
 router.get('/all', async (req, res) => {
   const productManager = new ProductManager();
-  await productManager.loadProducts();
+  await productManager.loadProducts(); 
   res
     .status(200)
     .send(productManager.getProducts());
@@ -23,7 +23,7 @@ router.get('', async (req, res) => {
   const productManager = new ProductManager();
   await productManager.loadProducts();
   const product = productManager.search(params);
-  
+
   if (!product) {
     res
       .status(404)
@@ -42,7 +42,7 @@ router.get('/:id', async (req, res) => {
   const productManager = new ProductManager();
   await productManager.loadProducts();
   const product = productManager.getProductById(id);
-  
+
   if (!product) {
     res
       .status(404)
@@ -51,7 +51,7 @@ router.get('/:id', async (req, res) => {
   res
     .status(200)
     .send(product);
-}); 
+});
 
 // POST
 

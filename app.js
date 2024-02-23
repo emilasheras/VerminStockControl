@@ -2,6 +2,7 @@ import dotenv from 'dotenv';
 import express from "express";
 import baseAppRouter from "./src/routes/base.js";
 import productsRouter from "./src/routes/ProductRouter.js";
+import cartsRouter from "./src/routes/CartsRouter.js";
 
 
 /** CONSTANTS **/
@@ -19,7 +20,7 @@ app.use(express.json()); // This line is crucial for parsing JSON req bodies
 // Routes
 app.use('/', baseAppRouter);
 app.use('/api/products', productsRouter);
-app.use('/api/carts', productsRouter);
+app.use('/api/carts', cartsRouter);
 
 // Start server
 app.listen(SERVER_PORT, () => {
