@@ -1,7 +1,15 @@
 # 🚀 PreEntrega 1 - Proyecto Final
 
+## Corrections Feedback
+> 1) No me permite cargar productos, usando el modelo de los productos que ya tenés en products.json (creo que pide categoría, y fijáte que en json los productos no tienen categoría) 
+> 2) Salvo eso los otros endpoints funcionan bien.
+> 3) El post de api/carts no esta implementado (seguramente lo implementaste en otra url, vi que me mandaste los endpoints en Insomnia pero no uso ese cliente, además necesario que respetes las url de la consigna. Fijáte que lo puse en el chat de la tutoría).
+> 4) No pude chequear los otros endpoints por el punto 3.
+
+- [x] 1) Fixed the product model to include the category field. this was done highlighting all attributes in the products.json and one by one correcting the missing field and the order of fields too. Se agrega el campo `status` que tambien faltaba.
+
 ## 📃 Tasks
-- [ ] Develop a server using Node.js and Express.js that listens on port 8080 and includes two groups of routes: `/products` and `/carts`. Implement these endpoints using Express's router.
+- [x] Develop a server using Node.js and Express.js that listens on port 8080 and includes two groups of routes: `/products` and `/carts`. Implement these endpoints using Express's router.
   - Products management (`/api/products/`):
     - [x] On the root route (`/`) with GET, list all products in the database (including support for a `?limit` query parameter as from the previous challenge).
     - [x] On `/:pid` with GET, fetch only the product with the provided id.

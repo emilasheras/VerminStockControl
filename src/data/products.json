@@ -1,59 +1,72 @@
 [
 	{
+		"id": 1,
 		"title": "TestProduct [001]",
 		"description": "This is a test product",
 		"price": 12,
-		"thumbnail": "Sin imagen",
+		"status": true,
 		"code": "20L31ABH",
 		"stock": 24,
-		"id": 1
+		"category": "Test",
+		"thumbnails": []
 	},
 	{
+		"id": 2,
 		"title": "TestProduct [002]",
 		"description": "This is a test product",
 		"price": 18,
-		"thumbnail": "Sin imagen",
+		"status": true,
 		"code": "20L31ABI",
 		"stock": 22,
-		"id": 2
+		"category": "Test",
+		"thumbnails": []
 	},
 	{
+		"id": 3,
 		"title": "TestProduct [003]",
 		"description": "This is a test product",
 		"price": 14,
-		"thumbnail": "Sin imagen",
+		"status": true,
 		"code": "20L31ABJ",
 		"stock": 25,
-		"id": 3
+		"category": "Test",
+		"thumbnails": []
 	},
 	{
+		"id": 4,
 		"title": "TestProduct [004]",
 		"description": "This is a test product",
 		"price": 16,
-		"thumbnail": "Sin imagen",
+		"status": true,
 		"code": "20L31ABK",
 		"stock": 23,
-		"id": 4
+		"category": "Test",
+		"thumbnails": []
 	},
 	{
+		"id": 5,
 		"title": "TestProduct [005]",
 		"description": "This is a test product",
 		"price": 13,
-		"thumbnail": "Sin imagen",
+		"status": true,
 		"code": "20L31ABL",
 		"stock": 27,
-		"id": 5
+		"category": "Test",
+		"thumbnails": []
 	},
 	{
+		"id": 6,
 		"title": "TestProduct [006]",
 		"description": "This is a test product",
 		"price": 17,
-		"thumbnail": "Sin imagen",
+		"status": true,
 		"code": "20L31ABM",
 		"stock": 21,
-		"id": 6
+		"category": "Test",
+		"thumbnails": []
 	},
 	{
+		"id": 7,
 		"title": "Product Updated Via API 3",
 		"description": "Description Test",
 		"code": "CDET3334",
@@ -61,26 +74,29 @@
 		"status": true,
 		"stock": 1,
 		"category": "Test",
-		"thumbnails": [],
-		"id": "7"
+		"thumbnails": []
 	},
 	{
+		"id": 8,
 		"title": "TestProduct [008]",
 		"description": "This is a test product",
 		"price": 19,
-		"thumbnail": "Sin imagen",
+		"status": true,
 		"code": "20L31ABO",
 		"stock": 20,
-		"id": 8
+		"category": "Test",
+		"thumbnails": []
 	},
 	{
+		"id": 9,
 		"title": "TestProduct [009]",
 		"description": "This is a test product",
 		"price": 15,
-		"thumbnail": "Sin imagen",
+		"status": true,
 		"code": "20L31ABP",
 		"stock": 26,
-		"id": 9
+		"category": "Test",
+		"thumbnails": []
 	},
 	{
 		"id": 11,
@@ -94,6 +110,7 @@
 		"thumbnails": []
 	},
 	{
+		"id": 12,
 		"title": "Product Updated Via API 2",
 		"description": "Description Test",
 		"code": "CDET3334",
@@ -101,7 +118,6 @@
 		"status": true,
 		"stock": 1,
 		"category": "Test",
-		"thumbnails": [],
-		"id": "12"
+		"thumbnails": []
 	}
 ]
