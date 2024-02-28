@@ -19,6 +19,19 @@ router.get('/:id', async (req, res) => {
         .send(cart);
 }); 
 
+router.post('', async (req, res) => {
+    const params = req.body;
+
+    // Initialize the cart manager 
+    const cartManager = new CartManager();
+    await cartManager.loadCarts();
+    const cartModel = cartManager.addCart(params);
+
+    res
+        .status(200)
+        .send("Product added to cart successfully");
+});
+
 router.post('/:id/product/:product_id', async (req, res) => {
     const id = req.params.id;
     const product_id = req.params.product_id;

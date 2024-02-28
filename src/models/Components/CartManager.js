@@ -78,5 +78,19 @@ export default class CartManager {
         // Find the product_id inside the cart and return the quantity for the total of products
     }
 
+    addCart(data) {
+        // data has the following format:
+        // "products": [
+		// 	{ "product_id": 8, "quantity": 1 },
+		// 	{ "product_id": 7, "quantity": 6 }
+		// ]
+        const cartModel = new CartModel({ ...data, id: this.currentId++ });
+        
+        // Check the field attributes before adding the data.
+        this.carts.push(cartModel.toJson()); // <- get the json format of the class object
+        this.saveCarts(); //* <- save the products to the file
+        return cartModel;
+    }
+
 
 }
