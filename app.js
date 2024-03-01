@@ -21,10 +21,10 @@ const ANSIred =     '\x1b[31m%s\x1b[0m';
 dotenv.config();
 // Express App Instance
 const app = express();
-// Port
+// Port 
 const SERVER_PORT = process.env.SERVER_PORT || 8080;
 // Static Assets (public folder)
-app.use(express.static(__dirname+'/src/public'));
+app.use(express.static(__dirname+'/public'));
 // Parse req bodies to JSON automatically
 app.use(express.json()); // This line is crucial for parsing JSON req bodies
 
@@ -40,7 +40,6 @@ app.use('/users', userRouter);
 // Initialize the handlebars engine
 app.engine('handlebars', handlebars.engine());
 // Set the project views path
-console.log(__dirname+'/src/views');
 app.set('views', __dirname+'/src/views');
 // Set the view engine as handlebars
 app.set('view engine', 'handlebars');

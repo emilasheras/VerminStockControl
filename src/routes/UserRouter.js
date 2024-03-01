@@ -5,7 +5,7 @@ const router = express.Router();
 
 /**
  * recieves a query id and returns a SINGLE product
- */
+ */ 
 router.get('', async (req, res) => {
 
     res.render('index', {
