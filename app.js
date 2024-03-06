@@ -9,6 +9,8 @@ import baseAppRouter from "./src/routes/base.js";
 import productsRouter from "./src/routes/ProductRouter.js";
 import cartsRouter from "./src/routes/CartsRouter.js";
 import userRouter from "./src/routes/UserRouter.js";
+// Socket.io
+import { Server } from 'socket.io';
 
 
 /** CONSTANTS **/
@@ -44,8 +46,17 @@ app.set('views', __dirname+'/src/views');
 // Set the view engine as handlebars
 app.set('view engine', 'handlebars');
 
+// Start server (HTTP)
+const httpServer = app.listen(SERVER_PORT, () => {
+    console.log(ANSIgreen, `\n⚙  Server running at http://localhost:${SERVER_PORT}`)
+});
 
-// Start server
-app.listen(SERVER_PORT, () => {
-    console.log(ANSImagenta, `Server running at http://localhost:${SERVER_PORT}`)
+// Socket.io (TCP Websockets)
+const socketServer = new Server(httpServer);
+// Socket.io events
+socketServer.on('connection', (socket) => {
+    console.log(`🔌 Socket.io: Client connected: ${socket.id}`);
+    socket.on('disconnect', () => {
+        console.log(ANSIred, `❌ Socket.io: Client disconnected: ${socket.id}`);
+    });
 });

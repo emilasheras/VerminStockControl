@@ -3,14 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     {{!-- libs and ext --}}
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    {{!-- websockets - Served automatically by socket.io lib --}}
+    <script src="/socket.io/socket.io.js"></script>
 
     {{!-- custom css --}}
     <link rel="stylesheet" href="/css/main.css">
 
     {{!-- custom js --}}
     <script src="/js/main.js"></script>
+    {{!-- custom websockets js --}}
+    <script src="/js/websocket.js"></script>
 
     <title>{{title}}</title>
 </head>

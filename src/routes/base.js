@@ -36,4 +36,13 @@ router.get('/two-parameters/:id/:name', (req, res) => {
     `);
 });
 
+// Testing websockets
+router.get('/websocket', async (req, res) => {
+
+  res.render('index', {
+      name: 'Jane Doe'
+  });
+});
+
+
 export default router;
