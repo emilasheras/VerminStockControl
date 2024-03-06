@@ -7,13 +7,13 @@
 {{!-- Products --}}
 <section class="d-flex-column">
 	<h2>All Products</h2>
-	<div class="d-flex">
+	<div class="d-flex products-container">
 		<ul>
 			{{#each products}}
 				<li class="d-flex-column">
 					<h2>{{title}}</h2>
 					<p>{{description}}</p>
-					<span>Price: ${{price}}</span>
+					<p>Price: ${{price}}</p>
 				</li>
 				<hr>
 			{{/each}}

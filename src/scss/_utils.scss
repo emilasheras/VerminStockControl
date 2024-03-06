@@ -33,3 +33,7 @@
 .d-flex-wrap {
     @include d-flex(row, start, start, wrap);
 }
+
+.products-container{
+    font-size: small;
+}

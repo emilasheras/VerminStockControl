@@ -142,4 +142,8 @@ body {
   flex-wrap: wrap;
 }
 
+.products-container {
+  font-size: small;
+}
+
 /*# sourceMappingURL=main.css.map */
