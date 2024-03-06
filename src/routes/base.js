@@ -1,5 +1,6 @@
 import express from 'express';
 const router = express.Router();
+import ProductManager from '../models/Components/ProductManager.js';
 
 // GET
 router.get('/', (req, res) => {
@@ -38,9 +39,15 @@ router.get('/two-parameters/:id/:name', (req, res) => {
 
 // Testing websockets
 router.get('/websocket', async (req, res) => {
+  const productManager = new ProductManager();
+  await productManager.loadProducts(); 
+  const allProducts = productManager.getProducts();
 
-  res.render('index', {
-      name: 'Jane Doe'
+  console.log(`Products Current Length: `+allProducts?.length);
+
+  res.render('home', {
+      name: 'Guest User',
+      products: allProducts
   });
 });
 

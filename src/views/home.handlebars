@@ -1,0 +1,18 @@
+{{!-- Desc --}}
+<div>
+	<h1>Socket.io Testing Page.</h1>
+	<p>Current name: {{name}}</p>
+</div>
+
+{{!-- Products --}}
+<div>
+	<ul>
+		{{#each products}}
+			<li>
+				<h2>{{title}}</h2>
+				<p>{{description}}</p>
+				<span>Price: ${{price}}</span>
+			</li>
+		{{/each}}
+	</ul>
+</div>
