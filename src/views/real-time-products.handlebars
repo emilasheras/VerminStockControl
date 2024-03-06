@@ -1,0 +1,22 @@
+{{!-- Desc --}}
+<section>
+	<h1>Real Time Products Page.</h1>
+	<p>Current name: {{name}}</p>
+</section>
+
+{{!-- Products --}}
+<section class="d-flex-column">
+	<h2>All Products</h2>
+	<div class="d-flex">
+		<ul>
+			{{#each products}}
+				<li class="d-flex-column">
+					<h2>{{title}}</h2>
+					<p>{{description}}</p>
+					<span>Price: ${{price}}</span>
+				</li>
+				<hr>
+			{{/each}}
+		</ul>
+	</div>
+</section>

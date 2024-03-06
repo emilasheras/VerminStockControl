@@ -1,0 +1,35 @@
+.d-flex {
+    @include d-flex;
+}
+
+.d-flex-row {
+    @include d-flex(row);
+}
+
+.d-flex-column {
+    @include d-flex(column);
+}
+
+.d-flex-justify-start {
+    @include d-flex(row, start);
+}
+
+.d-flex-justify-end {
+    @include d-flex(row, end);
+}
+
+.d-flex-align-start {
+    @include d-flex(row, start, start);
+}
+
+.d-flex-align-center {
+    @include d-flex(row, start, center);
+}
+
+.d-flex-align-end {
+    @include d-flex(row, start, end);
+}
+
+.d-flex-wrap {
+    @include d-flex(row, start, start, wrap);
+}

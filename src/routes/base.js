@@ -38,7 +38,7 @@ router.get('/two-parameters/:id/:name', (req, res) => {
 });
 
 // Testing websockets
-router.get('/websocket', async (req, res) => {
+router.get('/home', async (req, res) => {
   const productManager = new ProductManager();
   await productManager.loadProducts(); 
   const allProducts = productManager.getProducts();
@@ -46,6 +46,19 @@ router.get('/websocket', async (req, res) => {
   console.log(`Products Current Length: `+allProducts?.length);
 
   res.render('home', {
+      name: 'Guest User',
+      products: allProducts
+  });
+});
+
+router.get('/real-time-products', async (req, res) => {
+  const productManager = new ProductManager();
+  await productManager.loadProducts(); 
+  const allProducts = productManager.getProducts();
+
+  console.log(`Products Current Length: `+allProducts?.length);
+
+  res.render('real-time-products', {
       name: 'Guest User',
       products: allProducts
   });

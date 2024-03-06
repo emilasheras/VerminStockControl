@@ -70,4 +70,76 @@ body {
   --info-color: #17a2b8;
 }
 
+.d-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: start;
+  flex-wrap: nowrap;
+}
+
+.d-flex-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: start;
+  flex-wrap: nowrap;
+}
+
+.d-flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  flex-wrap: nowrap;
+}
+
+.d-flex-justify-start {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: start;
+  flex-wrap: nowrap;
+}
+
+.d-flex-justify-end {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: start;
+  flex-wrap: nowrap;
+}
+
+.d-flex-align-start {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: start;
+  flex-wrap: nowrap;
+}
+
+.d-flex-align-center {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.d-flex-align-end {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: end;
+  flex-wrap: nowrap;
+}
+
+.d-flex-wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: start;
+  flex-wrap: wrap;
+}
+
 /*# sourceMappingURL=main.css.map */
