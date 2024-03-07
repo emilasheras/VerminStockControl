@@ -56,10 +56,10 @@ router.get('/real-time-products', async (req, res) => {
   await productManager.loadProducts(); 
   const allProducts = productManager.getProducts();
 
-  console.log(`Products Current Length: `+allProducts?.length);
+  // console.log(`Products Current Length: `+allProducts?.length);
 
   res.render('real-time-products', {
-      name: 'Guest User',
+      name: 'Guest',
       products: allProducts
   });
 });
