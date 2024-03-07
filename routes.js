@@ -7,5 +7,5 @@ export default function setupAppRoutes(app) {
     app.use('/', baseAppRouter);
     app.use('/api/products', productsRouter);
     app.use('/api/carts', cartsRouter);
-    app.use('/users', userRouter);
+    // app.use('/users', userRouter);
 }

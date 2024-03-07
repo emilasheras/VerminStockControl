@@ -18,7 +18,7 @@ export default class ProductManager {
             const products = JSON.parse(data.toString());
             
             this.products = products;
-            console.log(`✅ Data loaded from ${this.filePath} ${PRODUCTS_EMOJI}`);
+            // console.log(`✅ Data loaded from ${this.filePath} ${PRODUCTS_EMOJI}`);
 
             // set currentId to the highest id in the products array
             this.currentId = products.length ? Math.max(...products.map(p => p.id)) + 1 : 1;

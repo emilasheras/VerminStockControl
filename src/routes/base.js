@@ -3,13 +3,11 @@ const router = express.Router();
 import ProductManager from '../models/Components/ProductManager.js';
 
 // GET
-router.get('/', (req, res) => {
-  res
-    .status(200)
-    .send(`
-      <h1>App</h1>
-      <p>You are in the app RootDir / </p>
-    `);
+router.get('', async (req, res) => {
+
+  res.render('index', {
+      name: 'Jane Doe'
+  });
 });
 
 // POST
@@ -51,7 +49,7 @@ router.get('/home', async (req, res) => {
   });
 });
 
-router.get('/real-time-products', async (req, res) => {
+router.get('/realtimeproducts', async (req, res) => {
   const productManager = new ProductManager();
   await productManager.loadProducts(); 
   const allProducts = productManager.getProducts();
