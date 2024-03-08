@@ -1,6 +1,5 @@
 import express from 'express';
 import CartManager from '../models/Components/CartManager.js';
-import ProductManager from '../models/Components/ProductManager.js';
 const router = express.Router();
 
 router.get('/:id', async (req, res) => {
@@ -17,7 +16,7 @@ router.get('/:id', async (req, res) => {
     res
         .status(200)
         .send(cart);
-}); 
+});
 
 router.post('', async (req, res) => {
     const params = req.body;
@@ -39,10 +38,6 @@ router.post('/:id/product/:product_id', async (req, res) => {
     // Initialize the cart manager 
     const cartManager = new CartManager();
     await cartManager.loadCarts();
-
-    // Initialize the product manager
-    const productManager = new ProductManager();
-    await productManager.loadProducts();
 
     // Add the product to the cart
     cartManager.addProductToCart(product_id, id);

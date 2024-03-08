@@ -3,11 +3,20 @@ import ProductModel from '../ProductModel.js';
 const PRODUCTS_FILE_PATH = './src/data/products.json';
 const PRODUCTS_EMOJI = "📦";
 
-export default class ProductManager {
+class ProductManager {
+    static instance = null;
+
     constructor() {
-        this.filePath = PRODUCTS_FILE_PATH;
-        this.products = [];
-        this.currentId = 1;
+        if (!ProductManager.instance) {
+            this.filePath = PRODUCTS_FILE_PATH;
+            this.products = [];
+            this.currentId = 1;
+            this.loadProducts().then(() => {
+                // ... do something after loading products
+            });
+            ProductManager.instance = this;
+        }
+        return ProductManager.instance;
     }
 
     async loadProducts() {
@@ -18,7 +27,7 @@ export default class ProductManager {
             const products = JSON.parse(data.toString());
             
             this.products = products;
-            // console.log(`✅ Data loaded from ${this.filePath} ${PRODUCTS_EMOJI}`);
+            console.log(`✅ Data loaded from ${this.filePath} ${PRODUCTS_EMOJI}`);
 
             // set currentId to the highest id in the products array
             this.currentId = products.length ? Math.max(...products.map(p => p.id)) + 1 : 1;
@@ -127,3 +136,7 @@ export default class ProductManager {
 
 
 }
+
+const instance = new ProductManager();
+// Object.freeze(instance); // <- prevent changes to the instance (immutability constraint)
+export default instance;

@@ -8,11 +8,11 @@ import ProductManager from '../models/Components/ProductManager.js';
  * Returns all products
  */
 router.get('/all', async (req, res) => {
-  const productManager = new ProductManager();
-  await productManager.loadProducts(); 
+  const products = ProductManager.getProducts();
+
   res
     .status(200)
-    .send(productManager.getProducts());
+    .send(products);
 });
 
 /**
@@ -20,9 +20,7 @@ router.get('/all', async (req, res) => {
  */
 router.get('', async (req, res) => {
   const params = req.query;
-  const productManager = new ProductManager();
-  await productManager.loadProducts();
-  const product = productManager.search(params);
+  const product = ProductManager.search(params);
 
   if (!product) {
     res
@@ -39,9 +37,7 @@ router.get('', async (req, res) => {
  */
 router.get('/:id', async (req, res) => {
   const id = req.params.id;
-  const productManager = new ProductManager();
-  await productManager.loadProducts();
-  const product = productManager.getProductById(id);
+  const product = ProductManager.getProductById(id);
 
   if (!product) {
     res
@@ -62,9 +58,7 @@ router.get('/:id', async (req, res) => {
  */
 router.post('', async (req, res) => {
   const params = req.body;
-  const productManager = new ProductManager();
-  await productManager.loadProducts();
-  const newProduct = productManager.addProduct(params);
+  const newProduct = ProductManager.addProduct(params);
 
   res
     .status(200)
@@ -78,9 +72,7 @@ router.post('', async (req, res) => {
 router.put('/:id', async (req, res) => {
   const id = req.params.id;
   const params = req.body;
-  const productManager = new ProductManager();
-  await productManager.loadProducts();
-  const updatedProduct = await productManager.updateProduct(id, params);
+  const updatedProduct = await ProductManager.updateProduct(id, params);
 
   res
     .status(200)
@@ -93,9 +85,7 @@ router.put('/:id', async (req, res) => {
  */
 router.delete('/:id', async (req, res) => {
   const id = req.params.id;
-  const productManager = new ProductManager();
-  await productManager.loadProducts();
-  const deletedProduct = productManager.deleteProduct(id);
+  const deletedProduct = ProductManager.deleteProduct(id);
 
   res
     .status(200)

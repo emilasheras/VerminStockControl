@@ -119,5 +119,49 @@
 		"stock": 1,
 		"category": "Test",
 		"thumbnails": []
+	},
+	{
+		"id": 13,
+		"title": "Product Added Via API 2",
+		"description": "Description Test",
+		"code": "CDET3ST",
+		"price": 122.3,
+		"status": true,
+		"stock": 1,
+		"category": "Test",
+		"thumbnails": []
+	},
+	{
+		"id": 14,
+		"title": "Product Added Via API 2",
+		"description": "Description Test",
+		"code": "CDET3ST",
+		"price": 122.3,
+		"status": true,
+		"stock": 1,
+		"category": "Test",
+		"thumbnails": []
+	},
+	{
+		"id": 15,
+		"title": "Product Added Via API 2",
+		"description": "Description Test",
+		"code": "CDET3ST",
+		"price": 122.3,
+		"status": true,
+		"stock": 1,
+		"category": "Test",
+		"thumbnails": []
+	},
+	{
+		"id": 16,
+		"title": "Product Added Via API 2",
+		"description": "Description Test",
+		"code": "CDET3ST",
+		"price": 122.3,
+		"status": true,
+		"stock": 1,
+		"category": "Test",
+		"thumbnails": []
 	}
 ]
