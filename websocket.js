@@ -1,10 +1,13 @@
 import { Server } from 'socket.io';
+import ProductManager from './src/models/Components/ProductManager.js';
 
 // Constants
 const SERVER_MESSAGE = 'server:message';
 const CLIENT_MESSAGE = 'client:message';
 const BROADCAST_MESSAGE = 'broadcast';
 const UPDATED_USER_LIST = 'updateUserList';
+const GET_PRODUCTS = 'getProducts';
+const UPDATED_PRODUCTS = 'updateProducts';
 const DIVIDER = '▱▱▰▱▱▰▱▱▰▱▱▰▱▱▰▱▱▰▱▱▰▱▱▰▱▱▰▱▱▰▱▱▰▱▱▰▱▱▰▱▱▰';
 
 // Variables
@@ -34,6 +37,17 @@ export default function setupWebSocket(server) {
         socket.on(CLIENT_MESSAGE, (msg) => {
             // console.log(`📱 ${msg}`);
         });
+
+        // Send Products to client
+        socket.on(GET_PRODUCTS, () => {
+            // console.log(`📦 Sending products to client`);
+            const productManager = new ProductManager();
+            productManager.loadProducts().then(() => {
+                const allProducts = productManager.getProducts();
+                socket.emit(UPDATED_PRODUCTS, allProducts);
+            });
+        });
+
 
         // Disconnect
         socket.on('disconnect', () => {

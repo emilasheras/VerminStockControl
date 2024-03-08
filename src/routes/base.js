@@ -45,7 +45,7 @@ router.get('/home', async (req, res) => {
 
   res.render('home', {
       name: 'Guest User',
-      products: allProducts
+      // products: allProducts
   });
 });
 

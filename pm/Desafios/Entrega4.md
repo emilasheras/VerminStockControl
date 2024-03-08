@@ -17,6 +17,16 @@
 ✓ Link to the Github repository, which must include the entire project.
 ✓ Do not include node_modules
 
+#### Testing Process
+- [x] The server will be installed and run on the indicated port.
+- [x] The server should wake up without problem.
+- [x] The root path will open
+- [x] The content of the index.handlebars view should be displayed
+- [x] The websocket should not be activated yet.
+- [x] The path “/realtimeproducts” will be searched in the browser url.
+- [x] It will be confirmed that the server has connected with the client; a “client connected” message should be displayed in the server console.
+- [x] The list of products should be displayed and it will be confirmed that it is being sent from websocket.
+
 
 ## Pre challenge setup and verification
 - [x] Express Server Preparation: Make sure you have an Express server already configured.

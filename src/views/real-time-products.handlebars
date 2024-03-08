@@ -5,22 +5,15 @@
 </section>
 <section>
 	<h2>Current Users</h2>
-	<ul id="current-users"></ul>
+	<ul id="current-users">
+		{{!-- ...populated with js --}}
+	</ul>
 </section>
 {{!-- Products --}}
 <section class="d-flex-column">
 	<h2>All Products</h2>
-	<div class="d-flex products-container">
-		<ul>
-			{{#each products}}
-				<li class="d-flex-column">
-					<h2>{{title}}</h2>
-					<p>{{description}}</p>
-					<p>Price: ${{price}}</p>
-				</li>
-				<hr>
-			{{/each}}
-		</ul>
+	<div class="d-flex products-container" id="all-products-container">
+		{{!-- ...populated with js --}}
 	</div>
 </section>
 
