@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const GET_PRODUCTS = 'getProducts';
     const UPDATED_PRODUCTS = 'updateProducts';
     const ADD_PRODUCT = 'addProduct';
+    const DELETE_PRODUCT = 'deleteProduct';
 
     // Send message to server
     socket.emit(CLIENT_MESSAGE, 'Hello');
@@ -58,12 +59,27 @@ document.addEventListener('DOMContentLoaded', function () {
             const price = document.createElement('p');
             price.textContent = `Price: $${product.price}`;
 
+            const code = document.createElement('p');
+            code.textContent = product.code;
+
             li.appendChild(title);
             li.appendChild(description);
             li.appendChild(price);
+            li.appendChild(code);
             ul.appendChild(li);
 
             const hr = document.createElement('hr');
+            // add a delete button
+            const deleteButton = document.createElement('button');
+            deleteButton.textContent = 'Delete';
+            deleteButton.className = 'delete-product-button';
+            deleteButton.addEventListener('click', function () {
+                console.log(`Deleting product:`, product.id);
+                socket.emit(DELETE_PRODUCT, product.id);
+            });
+            li.appendChild(deleteButton);
+
+            // add a horizontal divider
             ul.appendChild(hr);
         });
 
@@ -105,5 +121,6 @@ document.addEventListener('DOMContentLoaded', function () {
             document.querySelector(`#add-product-form [name="${attribute}"]`).value = '';
         });
     });
+
 
 }); // End of DOMContentLoaded

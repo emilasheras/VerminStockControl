@@ -83,7 +83,7 @@ class ProductManager {
         }
         this.products = this.products.filter(product => product.id != id);
 
-        console.log(`after filter function`,this.products);
+        // console.log(`after filter function`,this.products);
         
         this.saveProducts();
         // return true;

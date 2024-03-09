@@ -27,31 +27,35 @@ export default function setupWebSocket(server) {
 
         // Add user to list
         addUser(socketServer, id);
-        
+
         // Log
         console.log(`\n${DIVIDER}`);
         console.log(`💻 Connected [${id}]`);
         console.log(`🕒 Time: ${time}`);
         console.log(`🔢 Total clients: ${clientCount}`)
         console.log(`${DIVIDER}\n`);
-        
+
         // Receive message from client
         socket.on(CLIENT_MESSAGE, (msg) => {
-            // console.log(`📱 ${msg}`);
+            console.log(`📱 ${msg}`);
         });
 
         // Send Products to client
         socket.on(GET_PRODUCTS, () => {
-            // console.log(`📦 Sending products to client`);
-            const allProducts = ProductManager.getProducts();
-            socket.emit(UPDATED_PRODUCTS, allProducts);
+            console.log(`📦 Sending products to client`);
+            resendProductsList(socket);
         });
 
         socket.on(ADD_PRODUCT, (product) => {
-            console.log(`📦 Adding product:`,product);
+            console.log(`📦 Adding product:`, product);
             ProductManager.addProduct(product);
-            const allProducts = ProductManager.getProducts();
-            socketServer.emit(UPDATED_PRODUCTS, allProducts);
+            resendProductsList(socket);
+        });
+
+        socket.on('deleteProduct', (id) => {
+            console.log(`📦 Deleting product:`, id);
+            ProductManager.deleteProduct(id);
+            resendProductsList(socket);
         });
 
 
@@ -72,4 +76,8 @@ function addUser(socketServer, id) {
 function removeUser(socketServer, id) {
     users = users.filter((user) => user !== id);
     socketServer.emit(UPDATED_USER_LIST, users);
+}
+function resendProductsList(socket) {
+    const allProducts = ProductManager.getProducts();
+    socket.emit(UPDATED_PRODUCTS, allProducts);
 }
