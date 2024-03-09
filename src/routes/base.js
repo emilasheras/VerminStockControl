@@ -39,7 +39,7 @@ router.get('/two-parameters/:id/:name', (req, res) => {
 // Testing Websockets and Product Singleton
 
 router.get('/realtimeproducts', async (req, res) => {
-  res.render('real-time-products', {
+  res.render('realTimeProducts', {
     name: 'Guest'
   });
 });
