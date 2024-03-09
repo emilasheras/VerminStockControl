@@ -8,6 +8,8 @@ const BROADCAST_MESSAGE = 'broadcast';
 const UPDATED_USER_LIST = 'updateUserList';
 const GET_PRODUCTS = 'getProducts';
 const UPDATED_PRODUCTS = 'updateProducts';
+const ADD_PRODUCT = 'addProduct';
+
 const DIVIDER = '▱▱▰▱▱▰▱▱▰▱▱▰▱▱▰▱▱▰▱▱▰▱▱▰▱▱▰▱▱▰▱▱▰▱▱▰▱▱▰▱▱▰';
 
 // Variables
@@ -43,6 +45,13 @@ export default function setupWebSocket(server) {
             // console.log(`📦 Sending products to client`);
             const allProducts = ProductManager.getProducts();
             socket.emit(UPDATED_PRODUCTS, allProducts);
+        });
+
+        socket.on(ADD_PRODUCT, (product) => {
+            console.log(`📦 Adding product:`,product);
+            ProductManager.addProduct(product);
+            const allProducts = ProductManager.getProducts();
+            socketServer.emit(UPDATED_PRODUCTS, allProducts);
         });
 
 
