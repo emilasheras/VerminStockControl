@@ -41,11 +41,8 @@ export default function setupWebSocket(server) {
         // Send Products to client
         socket.on(GET_PRODUCTS, () => {
             // console.log(`📦 Sending products to client`);
-            const productManager = new ProductManager();
-            productManager.loadProducts().then(() => {
-                const allProducts = productManager.getProducts();
-                socket.emit(UPDATED_PRODUCTS, allProducts);
-            });
+            const allProducts = ProductManager.getProducts();
+            socket.emit(UPDATED_PRODUCTS, allProducts);
         });
 
 
